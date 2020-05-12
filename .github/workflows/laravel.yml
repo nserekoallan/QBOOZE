@@ -1,4 +1,4 @@
-name: QBOOZE
+name: Laravel
 
 on:
   push:
