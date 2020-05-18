@@ -20,6 +20,13 @@ Route::get('/', function () {
 Route::get('deliveryform', function () {
     return view('vendo.deliveryform');
 });
+Route::get('customersu', function () {
+    return view('auth.customersignup');
+});
+
+Route::get('vendorsu', function () {
+    return view('auth.vendorsignup');
+});
 
 
 Auth::routes();
