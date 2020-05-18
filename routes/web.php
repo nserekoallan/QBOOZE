@@ -17,6 +17,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('deliveryform', function () {
+    return view('vendo.deliveryform');
+});
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('order', function() {
+    return view('customer.order');
+});
+Route::get('payment', function() {
+    return view('customer.payment');
+});
+Route::get('message', function() {
+    return view('customer.message');
+});
