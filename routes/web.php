@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-=======
+
 Route::get('deliveryform', function () {
     return view('vendo.deliveryform');
 });
@@ -54,6 +54,3 @@ Route::post('products', 'ProductsController@store');
 
 //Route::get('contact', 'ProductsController@list');
 Route::get('catalogue', 'ProductsController@list');
-
-
->>>>>>> 000bd74bdcebc231c4b7398bd24affaf5aad67e3
