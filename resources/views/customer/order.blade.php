@@ -1,41 +1,54 @@
-@extends('layouts.ap')
+@extends('layout')
 
 @section('content')
-<div class="container">
-        <h1>Order Form</h1>
+    <h1>Orders</h1>
 
-        <form action="order" method="POST" class="pd-5">
+    <div class="row">
+        <div class="col-12">
+
+        <form action="orders" method="POST" class="pb-5">
+
+       
             <div class="form-group">
-                <label for="product">Product</label>
-                <select name="type" id="type" class="form-group">
-                    <option value="" disabled>Select product</option>
-                    <option value="0">Beer</option>
-                     <option value="1">Wine</option>
-                     <option value="1">Spirit</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="quantity">Quantity</label>
-                <input type="text" name="quantity" class="form-group">
-            </div>
-            <div class="form-group">
-                <label for="vendor">Vendor</label>
-                <select name="type" id="type" class="form-group">
-                    <option value="" disabled>Select Vendor</option>
-                    <option value="0">Vendor 1</option>
-                    <option value="1">Vendor 2</option>
-                    <option value="1">Vendor 3</option>
-                </select>
+            <label for="name">Name:</label>
+                <input type="text" name="name" class="form-control">
             </div>
 
-            <button type="submit" class="btn-success">Proceed to Payment</button>
-            <button type="reset" class="btn-danger">Clear</button>
+            <div>{{ $errors->first('name') }}</div>
 
+
+            <div class="form-group">
+            <label for="email">Email:</label>
+                <input type="email" name="email" class="form-control">
+            </div>
+
+            <div>{{ $errors->first('email') }}</div>
+
+
+            <div class="form-group pb-2">
+            <label for="location">Delivery Location:</label>
+                <input type="text" name="location" value="{{ old('location') }}" class="form-control">
+            </div>
+
+
+            <div class="form-group pb-2">
+            <label for="contact">Contact:</label>
+                <input type="text" name="contact" value="{{ old('contact') }}" class="form-control">
+            </div>
+
+            <div>{{ $errors->first('contact') }}</div>
+
+            <button type="submit" class="btn btn-outline-success">Make Order</button>
+            <button type="reset" class="btn btn-outline-danger">Cancel Order</button>
+
+            @csrf
         </form>
-        <hr>
 
-        <h1>Order History</h1>
+        </div>
+    </div>
 
-   
-</div>
-@endsection 
+    
+
+  
+  
+@endsection

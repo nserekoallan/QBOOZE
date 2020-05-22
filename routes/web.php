@@ -31,13 +31,23 @@ Route::get('vendorsu', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('order', function() {
-    return view('customer.order');
-});
-Route::get('payment', function() {
-    return view('customer.payment');
-});
-Route::get('message', function() {
-    return view('customer.message');
-});
+
+
+
+Route::view('contact', 'customer.contact');
+Route::view('home', 'customer.home');
+
+//order routes
+Route::get('orders', 'OrdersController@list');
+Route::post('orders', 'OrdersController@store');
+
+Route::get('history', 'OrdersController@list');
+
+//product routes
+Route::get('products', 'ProductsController@list');
+Route::post('products', 'ProductsController@store');
+
+//Route::get('contact', 'ProductsController@list');
+Route::get('catalogue', 'ProductsController@list');
+
+
