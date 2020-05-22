@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBrewersTable extends Migration
+class CreateShoppingCartsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateBrewersTable extends Migration
      */
     public function up()
     {
-        Schema::create('brewers', function (Blueprint $table) {
+        Schema::create('shopping_carts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('brewerName');
         });
     }
 
@@ -27,6 +26,6 @@ class CreateBrewersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('brewers');
+        Schema::dropIfExists('shopping_carts');
     }
 }
