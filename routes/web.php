@@ -17,6 +17,43 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+=======
+Route::get('deliveryform', function () {
+    return view('vendo.deliveryform');
+});
+Route::get('customersu', function () {
+    return view('auth.customersignup');
+});
+
+Route::get('vendorsu', function () {
+    return view('auth.vendorsignup');
+});
+
+
+Auth::routes();
+
+
+
+
+Route::view('contact', 'customer.contact');
+Route::view('home', 'customer.home');
+
+//order routes
+Route::get('orders', 'OrdersController@list');
+Route::post('orders', 'OrdersController@store');
+
+Route::get('history', 'OrdersController@list');
+
+//product routes
+Route::get('products', 'ProductsController@list');
+Route::post('products', 'ProductsController@store');
+
+//Route::get('contact', 'ProductsController@list');
+Route::get('catalogue', 'ProductsController@list');
+
+
+>>>>>>> 000bd74bdcebc231c4b7398bd24affaf5aad67e3
